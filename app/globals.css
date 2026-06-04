@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  --bg-deep: #050505;
+  --neon-orange: #ff7e5f;
+  --neon-peach: #feb47b;
+  --text-primary: #ffffff;
+  --text-dim: #707070;
+  --arcade-glow: 0 0 10px var(--neon-orange), 0 0 20px rgba(255, 126, 95, 0.3);
+  --portrait-filter: hue-rotate(0deg);
+}
+
+/* --- THEME VARIATIONS --- */
+.portfolio.theme-terminal {
+  --neon-orange: #00ff41;
+  --neon-peach: #008f11;
+  --arcade-glow: 0 0 10px #00ff41, 0 0 20px rgba(0, 255, 65, 0.3);
+  --bg-deep: #000a00;
+  --portrait-filter: hue-rotate(160deg);
+}
+
+.portfolio.theme-minimal {
+  --neon-orange: #60a5fa;
+  --neon-peach: #93c5fd;
+  --arcade-glow: none;
+  --bg-deep: #0f172a;
+  --portrait-filter: hue-rotate(240deg) saturate(1.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000;
+  color: var(--text-primary);
+  font-family: 'JetBrains Mono', monospace;
+  overflow-x: hidden;
+}
+
+.portfolio {
+  background: var(--bg-deep);
+  position: relative;
+  overflow: hidden; /* For floating elements */
+}
+
+/* --- AMBIENT DECOR --- */
+.ambient-decor {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.15;
+}
+
+.data-chunk {
+  position: absolute;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 8px;
+  color: var(--neon-orange);
+  white-space: nowrap;
+  animation: float-data 20s linear infinite;
+}
+
+@keyframes float-data {
+  from { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  to { transform: translateY(-10vh) rotate(10deg); opacity: 0; }
+}
+
+.bg-circuit {
+  position: absolute;
+  border: 1px solid var(--neon-orange);
+  opacity: 0.2;
+}
+
+/* --- HIGH-FIDELITY CRT OVERLAY --- */
+.scanlines {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%);
+  background-size: 100% 4px;
+  opacity: 0.15;
+}
+
+.scanline-sweep {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 126, 95, 0.03), transparent);
+  animation: sweep 10s linear infinite;
+  z-index: 9998;
+  pointer-events: none;
+}
+
+@keyframes sweep {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+/* --- TOPBAR --- */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(0,0,0,0.9);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.brand {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.theme-tabs {
+  display: flex;
+  background: #111;
+  padding: 3px;
+  border: 1px solid #222;
+  border-radius: 4px;
+}
+
+.theme-tab {
+  background: transparent;
+  border: none;
+  color: #444;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.theme-tab.active { background: var(--neon-orange); color: #000; }
+
+.nav-links { display: flex; gap: 20px; }
+.nav-links button { background: none; border: none; color: #777; font-size: 11px; font-weight: bold; cursor: pointer; }
+.nav-links button:hover { color: var(--neon-orange); }
+
+/* --- COMPACT SECTIONS --- */
+.section-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.intro-header {
+  text-align: center;
+  padding: 100px 0;
+}
+
+.intro-header h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: clamp(1.5rem, 6vw, 3.5rem);
+  line-height: 1.4;
+  text-shadow: 4px 4px 0 var(--neon-orange);
+}
+
+/* --- HERO GRID --- */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.pixel-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px var(--neon-orange);
+}
+
+.portrait-frame {
+  width: 100%;
+  max-width: 350px;
+  border: 2px solid var(--neon-orange);
+  padding: 5px;
+  position: relative;
+  box-shadow: var(--arcade-glow);
+  cursor: pointer;
+  background: #000;
+  overflow: hidden;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: var(--portrait-filter);
+  transition: filter 0.5s ease, transform 0.3s;
+  display: block;
+}
+
+.portrait-frame:hover .portrait-img { transform: scale(1.02); }
+
+/* --- CONTENT STYLING --- */
+.section-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
+  margin-bottom: 40px;
+  border-bottom: 2px solid var(--neon-orange);
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.lead { color: var(--text-dim); font-size: 17px; line-height: 1.8; margin-bottom: 30px; }
+
+.arcade-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 30px;
+  background: #fff;
+  color: #000;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  text-decoration: none;
+  border: none;
+  clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+  cursor: pointer;
+}
+
+.arcade-btn:hover { background: var(--neon-orange); color: #fff; }
+.arcade-btn.outline { background: transparent; border: 1px solid #fff; color: #fff; }
+
+/* --- TECH STACK --- */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.tech-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid #222;
+  padding: 25px;
+  backdrop-filter: blur(5px);
+}
+
+.tech-card:hover { border-color: var(--neon-orange); box-shadow: var(--arcade-glow); }
+
+.tech-label { font-family: 'Press Start 2P', cursive; font-size: 9px; color: var(--neon-orange); margin-bottom: 15px; }
+.tech-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tech-tag { font-size: 12px; color: #999; border: 1px solid #333; padding: 4px 8px; }
+
+/* --- EXPERIENCE --- */
+.exp-item { margin-bottom: 50px; }
+.exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+.exp-role { font-family: 'Press Start 2P', cursive; font-size: 12px; color: #fff; }
+.exp-date { color: var(--neon-orange); font-size: 12px; }
+.exp-company { color: var(--neon-orange); font-weight: bold; margin-bottom: 15px; }
+.exp-points { color: #888; list-style: none; line-height: 1.6; }
+
+/* --- PROJECTS --- */
+.proj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
+.proj-card { border: 1px solid #222; text-decoration: none; display: block; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); }
+.proj-card:hover { border-color: var(--neon-orange); }
+.proj-head { background: #fff; color: #000; padding: 8px 15px; font-family: 'Press Start 2P', cursive; font-size: 9px; display: flex; justify-content: space-between; }
+.proj-body { padding: 20px; }
+.proj-summary { font-size: 14px; color: #888; margin-top: 10px; }
+
+/* --- FOOTER --- */
+footer { padding: 60px 0; text-align: center; border-top: 1px solid #111; color: #444; font-family: 'Press Start 2P', cursive; font-size: 8px; line-height: 1.6; position: relative; z-index: 10; }
+
+@media (max-width: 768px) {
+  .hero-grid, .proj-grid { grid-template-columns: 1fr; }
+  .topbar { padding: 15px 20px; }
+}
