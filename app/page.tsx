@@ -243,6 +243,8 @@ export default function Home() {
                   width={340}
                   height={420}
                   priority
+                  fetchPriority="high"
+                  quality={60}
                   sizes="(max-width: 768px) 340px, 340px"
                   style={{
                     position: 'absolute',
