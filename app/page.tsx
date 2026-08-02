@@ -243,6 +243,7 @@ export default function Home() {
                   width={340}
                   height={420}
                   priority
+                  sizes="(max-width: 768px) 340px, 340px"
                   style={{
                     position: 'absolute',
                     top: '-7%',
