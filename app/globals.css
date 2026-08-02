@@ -207,6 +207,11 @@ button {
   border-bottom: 4px solid var(--border-strong);
   padding-bottom: 16px;
   margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .hero-title {
@@ -217,13 +222,11 @@ button {
 .trainer-id {
   font-size: 1.5rem;
   color: var(--text-secondary);
-  float: right;
-  margin-top: -30px;
 }
 
 .hero-meta {
   font-size: 0.8rem;
-  color: var(--accent-blue);
+  color: var(--screen-text);
   margin-bottom: 16px;
 }
 
