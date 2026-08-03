@@ -73,7 +73,7 @@ const projectsData = [
     subtitle: "Collaborative Task Manager",
     stack: "Kotlin, Supabase, Android XML, Coroutines",
     summary: "Built a collaborative cloud task manager using Supabase (PostgreSQL) for real-time syncing and secure auth. Engineered a deep-link invite system for instant cross-device task sharing. Designed a custom neo-brutalist UI and implemented multi-user tracking and daily reminders, enabling seamless real-time team collaboration.",
-    href: "https://github.com/Bimal-Prakash/SmartTODO",
+    href: "https://smarttodo-self.vercel.app/",
     year: "2025"
   }
 ];
