@@ -36,7 +36,7 @@ const experienceData = [
     role: "Android Developer Intern",
     date: "02/2026 — 05/2026",
     points: [
-      "Developed a collaborative Android task management app (SmartTODO) using Firebase Firestore for real time data sync.",
+      "Developed a collaborative Android task management app (SmartTODO) using Supabase (PostgreSQL) for real-time data sync and secure auth.",
       "Implemented deep link based task sharing, real-time updates and automated reminder scheduling.",
       "Gained practical experience in Android app development, cloud services integration and scalable mobile application workflows."
     ],
@@ -71,8 +71,8 @@ const projectsData = [
   {
     title: "SmartTODO",
     subtitle: "Collaborative Task Manager",
-    stack: "Kotlin, Android, Firebase",
-    summary: "A collaborative cloud task manager enabling real-time syncing via Firebase. Implemented a deep link join system to share tasks instantly across devices with a single invite link.",
+    stack: "Kotlin, Supabase, Android XML, Coroutines",
+    summary: "Built a collaborative cloud task manager using Supabase (PostgreSQL) for real-time syncing and secure auth. Engineered a deep-link invite system for instant cross-device task sharing. Designed a custom neo-brutalist UI and implemented multi-user tracking and daily reminders, enabling seamless real-time team collaboration.",
     href: "https://github.com/Bimal-Prakash/SmartTODO",
     year: "2025"
   }
@@ -82,7 +82,7 @@ const skillsData = {
   architectures: ["Agentic AI", "Microservices", "Event-Driven", "Client-Server"],
   languages: ["Python", "TypeScript", "Kotlin", "Java"],
   frameworks: ["React", "Next.js", "FastAPI", "Android Jetpack"],
-  infrastructure: ["Firebase", "PostgreSQL", "WebSockets", "Local LLMs"]
+  infrastructure: ["Supabase", "Firebase", "PostgreSQL", "WebSockets", "Local LLMs"]
 };
 
 const emailUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=bimalpb123@gmail.com";
